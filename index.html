@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Casino in Flushing - Interactive Article</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0d0d0d;
+        font-family: "DM Sans", sans-serif;
+        font-optical-sizing: auto;
+      }
+
+    /* ----------------- MOBILE STYLING ----------------- */
+    @media (max-width:767px) {
+      html {
+        font-size: 16px; /* base font size (applies to mobile) */
+      }
+
+      .breakpoint-indicator {
+        margin: 2rem 0;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+      }
+
+      .breakpoint-indicator::before {
+        content: "active media condition: mobile (< 768px)";
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-content {
+        max-width: 70ch;
+      } 
+
+      .image-container {
+        position: relative; /* no other element can fill in this gap?? */
+      }
+
+      #flushing-cover-photo {
+        width: 100%;
+        height: auto;
+      }
+
+      .title-box {
+          position: absolute; /* 'absolute' is good for overlays */
+          text-align: center;
+          max-width: 90%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #0d0d0d;
+          padding: 0.75rem;
+        }
+
+      #headline {
+        font-family: "Aldrich", sans-serif;
+        font-size: 2rem;
+        font-weight: normal;
+        color: white;
+      }
+
+      #byline {
+        font-size: 14px;
+        font-weight: light;
+        margin-top: -0.7rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      #scroll-down-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .scroll-directive {
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+
+      @keyframes arrow-bounce-fade { /* downward arrow animation */
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        50% {
+          opacity: 0.3;
+          transform: translateY(6px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #upside-down-carrot {
+        font-size: 2rem;
+        text-align: center;
+        animation: arrow-bounce-fade 1.5s infinite ease-in-out;
+      } 
+
+      #intro-photo-1 {
+        margin-top: 10rem;
+      }
+
+     .body-grid {
+        display: grid;
+        row-gap: 2rem;
+        align-items: center; 
+        margin-top: 3rem;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+      }
+
+      .body-photo:not(#person-photo, #data-graphic) {
+        width: 95%;
+        justify-self: center;
+      }
+
+      #person-photo, #data-graphic {
+        max-width: 80%;
+         justify-self: center;
+      }
+
+      .body-text-container {
+        padding: 0.5rem;
+        background-color: #D1D1D1;
+        width: 80%;
+        justify-self: center;
+      }
+
+      .bold-text {
+        font-weight: bold;
+      }
+
+      .section-break {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+
+    /* ----------------- DESKTOP STYLING ----------------- */
+
+      @media (min-width: 768px) {
+        html {
+          padding: 1.7rem;
+        }
+
+        .breakpoint-indicator::before {
+          content: "active media condition: desktop (≥ 768px)";
+        }
+
+        .image-container {
+          position: relative; /* no other element can fill in this gap?? */
+        }
+
+        #flushing-cover-photo {
+          width: 100%;
+          height: auto;
+          }
+
+        .title-box {
+          position: absolute; /* 'absolute' is good for overlays */
+          text-align: center;
+          max-width: 350px;
+          top: 41%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #0d0d0d;
+          padding: 1.25rem;
+        }
+
+        #headline {
+          font-family: "Aldrich", sans-serif;
+          font-size: 3rem;
+          font-weight: normal;
+          color: white;
+        }
+
+        #byline {
+          font-size: 11px;
+          font-weight: light;
+          margin-top: -0.2rem;
+          margin-bottom: 1.2rem;
+          color: white;
+        }
+
+        #scroll-down-text {
+          font-size: 11px;
+          font-weight: bold;
+          color: white;
+        }
+
+        .scroll-directive {
+          position: absolute;
+          text-align: center;
+          top: 85%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+
+        @keyframes arrow-bounce-fade { /* downward arrow animation */
+          0% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          50% {
+            opacity: 0.3;
+            transform: translateY(6px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        #upside-down-carrot {
+          font-size: 2rem;
+          text-align: center;
+          animation: arrow-bounce-fade 1.5s infinite ease-in-out;
+        }   
+    /*  ARTICLE CONTENTS */
+
+      .body-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* fr means fractional unit or ratio */
+        column-gap: 3rem;
+        row-gap: 1rem;
+
+        margin-top: 5rem;
+        margin-left: 7rem;
+        margin-right: 7rem;
+
+        align-items: center; /* 'align-items' justifies the grid item vertically */
+      }
+
+      .body-photo:not(#process-map, #person-photo, #data-graphic){
+        width: 100%;
+      }
+
+      #process-map {
+        width: 80%;
+        justify-self: center;
+      }
+
+      #person-photo {
+        width: 60%;
+        justify-self: center;
+      }
+
+      #data-graphic {
+        width: 50%;
+        justify-self: center;
+      }
+
+      .body-text-container {
+        background-color: #D1D1D1;
+        padding: 1.25rem;
+      }
+
+      .bold-text {
+        font-weight: bold;
+      }
+
+      .section-break {
+        display: flex;
+        gap: 10rem;
+      }
+     
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="image-container">
+      <img id="flushing-cover-photo"
+        alt="A street in Flushing, NY featuring Mei Hao Mall" 
+        src="assets/mei-hao-mall.jpg"/>
+
+      <div class="title-box">
+        <h1 id="headline">No Casino in Flushing</h1>
+        <div id="byline">By Louise Liu
+          <div>Published May 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-directive">
+      <div id="scroll-down-text">Scroll to Continue</div>
+      <div id="upside-down-carrot">&#8964</div>
+    </div>
+
+    <!----------------- ARTICLE TEXT BEGINS HERE ----------------->
+
+    <div class="body-grid">
+      <img class="body-photo" id="intro-photo-1"
+        alt="A shot of Flushing Main Street on no particular day, in Queens, NY "
+        src="assets/main-street.jpg";/> 
+      <div class="body-text-container" id="intro-text-container">
+          Along the 7 train to Queens, storefronts shift between Mandarin, Spanish, and Bengali. 
+          Children can be seen walking home from school, while their parents make their commutes to work.
+          Food trucks, mosques, herbal medicine centers, and boba shops line the streets. 
+          <p class="bold-text">And soon, the landscape might include something new: a casino.</p>
+      </div>
+    </div>
+
+    <p class="section-break">
+
+    <div class="body-grid">
+      <img class="body-photo" id="process-map"
+        alt="A map of the proposed casino development in Flushing, Queens"
+        src="assets/casino_map.png"/>
+      <div class="body-text-container" id="process-text-container">
+          On Dec 15th, the New York Gaming Commission <a href="https://abc7ny.com/post/ny-gaming-board-vote-monday-awarding-new-casino-licenses-york-city/18230321/">approved a casino to be built</a> in Flushing Meadows Corona Park, 
+          which lays between the Corona and Flushing neighborhoods in Queens.
+      </div>
+    </div>
+
+    <p class="section-break"></p>
+
+    <div class="body-grid">
+        <img class="body-photo" id="money-photo"
+          alt="A street in Flushing, Queens. An ambulance sits in front of the stores."
+          src="assets/ambulance-storefront.jpg"/>
+        <div class="body-text-container" id="money-text-container">
+            The casino was introduced by Steve Cohen and Hard Rock… 
+            ...who spent an average of $1.5 million in <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/LobbyingAnnualReport2024.pdf">2023</a>, 
+            <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/2025%20Annual%20Report%20FINAL.pdf">2024</a>, 
+            and <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/2026%20Annual%20Report%20final.pdf">2025</a> to lobby for the casino...
+        </div>
+    </div>
+
+    <p class="section-break"></p>
+
+    <div class="body-grid">
+        <img class="body-photo" id="person-photo"
+          alt="A man selling flowers in the Flushing area of Queens, NY."
+          src="assets/flowerman.jpg"/>
+        <div class="body-text-container" id="people-text-container">
+          This is how the community is responding…
+          Protestors...
+          13+ Organizations...
+        </div>
+    </div>
+
+    <p class="section-break"></p>
+
+    <div class="body-grid">
+        <img class="body-photo" id="data-graphic"
+          alt="A line waits for the bus on Flushing Main Street."
+          src="assets/placeholder-pic.jpg"/> <!--I've yet to create the data graphic so I included a placeholder pic-->
+        <div class="body-text-container" id="people-text-container">
+          Context — demographics of the area (race, rent-burdened, addiction)
+          <p class="bold-text">Steven Cohen's investor's quote abt specifically targeting Chinese communities...</p>
+          <p>While the casino proposes also includes x amount of affordable housing units, 
+            it’s <a href="https://www.urban.org/urban-wire/how-developing-casino-public-land-queens-new-york-city-could-displace-nearby-residents">not enough for all the rent-burdened people…</a></p>
+        </div>
+    </div>
+
+    <p class="section-break"></p>
+
+  </body>
+</html> 
+
+
+<!-- comments from prof:
+
+- remove gray squares behind text
+- don't use grids if too hard. you can use other boxes. look into "boxes" and "floats"
+- think about interactivity. sometimes u scroll and the image stays while the text moves.
+- think abt spacing/alignment between text and visuals
+ 
+-->
