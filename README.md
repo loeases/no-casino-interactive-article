@@ -3,11 +3,13 @@
 My goal for this project was to create a visual journalistic article, in the style of “scrollytelling,” to convey the perspective of the No Casino in Flushing Meadows Corona Park protestors. Pressed for time and limited in coding ability, I wanted to first establish the basic visual style, including the image and text formatting, as well as the color scheme and fonts.
 
 **Wire Framing**
+
 Drawing inspiration from interactive articles on The New York Times, and the Philadelphia Inquirer, and The Pudding, I designed a wireframe for desktop and mobile devices.
 
 In order to emphasize the liveliness of Flushing, I wanted the article’s photos to pop. Thus, I decided on a minimalistic, mostly black theme to contrast with the photos. Text would be contained within gray boxes to stand out against the dark background, in order to account for visual accessibility. 
 
 **Coding**
+
 I borrowed code from a class demonstration on responsiveness so that the article would be accessible in a desktop and mobile format, creating different breakpoints for each.
 
 In order to establish a consistent visual style, I imported two fonts from Google Fonts: a title font (Aldrich) and a general font for the entire article (DM Sans). Fonts were selected for their resemblance to those used by the aforementioned news outlets.
@@ -21,4 +23,5 @@ In the desktop version, each section of the article (one photo and one textbox p
 This grid format did not work in the mobile version. Thus, instead of having two columns, I formatted the article to only consist of one column and row, so that the format would first show a photo, then text, then a photo, then text, etc, in order.
 
 To create space between sections and increase accessibility, I used a flexbox to create a gap between each section.
+
 # no-casino-interactive-article
