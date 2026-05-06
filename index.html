@@ -4,553 +4,185 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>No Casino in Flushing - Interactive Article</title>
-
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #0d0d0d;
-        font-family: "DM Sans", sans-serif;
-        font-optical-sizing: auto;
-      }
-
-    /* ----------------- MOBILE STYLING ----------------- */
-    @media (max-width:767px) {
-      html {
-        font-size: 16px; /* base font size (applies to mobile) */
-      }
-
-      .breakpoint-indicator {
-        margin: 2rem 0;
-        padding: 0 2rem;
-        font-size: 1.5rem;
-      }
-
-      .breakpoint-indicator::before {
-        content: "active media condition: mobile (< 768px)";
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .text-content {
-        max-width: 70ch;
-      } 
-
-      .image-container {
-        position: relative; /* no other element can fill in this gap?? */
-      }
-
-      #flushing-cover-photo {
-        width: 100%;
-        height: auto;
-      }
-
-      .title-box {
-          position: absolute; /* 'absolute' is good for overlays */
-          text-align: center;
-          max-width: 90%;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #0d0d0d;
-          padding: 0.75rem;
-        }
-
-      #headline {
-        font-family: "Aldrich", sans-serif;
-        font-size: 2rem;
-        font-weight: normal;
-        color: white;
-      }
-
-      #byline {
-        font-size: 14px;
-        font-weight: light;
-        margin-top: -0.7rem;
-        margin-bottom: 1rem;
-        color: white;
-      }
-
-      #scroll-down-text {
-        font-size: 14px;
-        font-weight: bold;
-        color: white;
-      }
-
-      .scroll-directive {
-        position: absolute;
-        text-align: center;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-      }
-
-      @keyframes arrow-bounce-fade { /* downward arrow animation */
-        0% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        50% {
-          opacity: 0.3;
-          transform: translateY(6px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      #upside-down-carrot {
-        font-size: 2rem;
-        text-align: center;
-        animation: arrow-bounce-fade 1.5s infinite ease-in-out;
-      } 
-
-      #intro-photo-1 {
-        margin-top: 10rem;
-      }
-
-     .body-grid {
-        display: grid;
-        row-gap: 2rem;
-        align-items: center; 
-        margin-top: 3rem;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
-      }
-
-      .body-photo:not(#person-photo, #data-graphic) {
-        width: 95%;
-        justify-self: center;
-      }
-
-      #person-photo, #data-graphic {
-        max-width: 80%;
-         justify-self: center;
-      }
-
-      .body-text-container {
-        padding: 0.5rem;
-        background-color: #D1D1D1;
-        width: 80%;
-        justify-self: center;
-      }
-
-      .bold-text {
-        font-weight: bold;
-      }
-
-      .section-break {
-        display: flex;
-        gap: 2rem;
-      }
-    }
-
-    /* ----------------- DESKTOP STYLING ----------------- */
-
-      @media (min-width: 768px) {
-        html {
-          padding: 1.7rem;
-        }
-
-        body {
-          margin: 0;
-        }
-
-        .breakpoint-indicator::before {
-          content: "active media condition: desktop (≥ 768px)";
-        }
-
-        .image-container {
-          position: relative; /* no other element can fill in this gap?? */
-        }
-
-        #flushing-cover-photo {
-          width: 100%;
-          height: auto;
-          }
-
-        .title-box {
-          position: absolute; /* 'absolute' is good for overlays */
-          text-align: center;
-          max-width: 350px;
-          top: 41%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #0d0d0d;
-          padding: 1.25rem;
-        }
-
-        #headline {
-          font-family: "Aldrich", sans-serif;
-          font-size: 3rem;
-          font-weight: normal;
-          color: white;
-        }
-
-        #byline {
-          font-size: 11px;
-          font-weight: light;
-          margin-top: -0.2rem;
-          margin-bottom: 1.2rem;
-          color: white;
-          text-align: center;
-        }
-
-        .byline-main,
-        .byline-sub {
-          display: block;
-        }
-
-        #scroll-down-text {
-          font-size: 14px;
-          font-weight: bold;
-          color: white;
-        }
-
-        .scroll-directive {
-          position: absolute;
-          text-align: center;
-          top: 85%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-        }
-
-        .scrolled .scroll-directive {
-          opacity: 0;
-          transition: opacity 0.5s ease;
-        }
-
-        @keyframes arrow-bounce-fade { /* downward arrow animation */
-          0% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          50% {
-            opacity: 0.3;
-            transform: translateY(6px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        #upside-down-carrot {
-          font-size: 2rem;
-          text-align: center;
-          animation: arrow-bounce-fade 1.5s infinite ease-in-out;
-        }   
-
-        #progress-bar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 0%;
-          background: white;
-          z-index: 9999;
-
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .image-container {
-          transition: transform 0.6s ease, opacity 0.6s ease;
-        }
-
-        .image-container.scrolled {
-          transform: scale(0.98);
-          opacity: 0.95;
-        }
-
-        /* loading animation */
-
-        body.loading {
-          overflow: hidden;
-        }
-
-        body.loading .all-body-contents,body.loading .scroll-directive { 
-          opacity: 0;
-          pointer-events: none;
-        }
-
-        .all-body-contents,.scroll-directive {
-         transition: opacity 0.6s ease;
-        }
-
-       
-        
-    /*  ARTICLE CONTENTS */
-
-      .body-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr; /* fr means fractional unit or ratio */
-        column-gap: 3rem;
-        row-gap: 1rem;
-
-        margin-top: 5rem;
-        margin-left: 7rem;
-        margin-right: 7rem;
-
-        align-items: center; /* 'align-items' justifies the grid item vertically */
-      }
-
-      .body-photo:not(#process-map, #person-photo, #data-graphic){
-        width: 100%;
-      }
-
-      #process-map {
-        width: 80%;
-        justify-self: center;
-      }
-
-      #person-photo {
-        width: 60%;
-        justify-self: center;
-      }
-
-      #data-graphic {
-        width: 50%;
-        justify-self: center;
-      }
-
-      .body-text-container {
-        background-color: #D1D1D1;
-        padding: 1.25rem;
-      }
-
-      .bold-text {
-        font-weight: bold;
-      }
-
-      .section-break {
-        display: flex;
-        gap: 10rem;
-      }
-    }
-
-    .body-grid { /* scrolly animation fades */
-      opacity: 0;
-      transform: translateY(60px);
-      transition: all 0.8s ease;
-    }
-
-    .body-grid.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-     
-
-    </style>
   </head>
 
   <body>
 
-    <div id="progress-bar"></div>
-
-    <div class="image-container">
-      <img id="flushing-cover-photo"
-        alt="A street in Flushing, NY featuring Mei Hao Mall" 
-        src="assets/mei-hao-mall.jpg"/>
+    <div id="progress-bar"></div>   
 
       <div class="title-box">
-        <h1 id="headline">No Casino in Flushing</h1>
-        <div id="byline">
-          <span class="byline-main"></span>
-          <span class="byline-sub"></span>
+        <h1 id="headline" class="fade-in-animation">Who Decides Flushing's Future?</h1>
+        <div id="byline" class="fade-in-animation1">
+          <span>By Louise Liu<br>Published May 2026</span> <!-- "br" means linebreak -->
         </div>
       </div>
+
+
+    <div class="image-container">
+      <img id="flushing-cover-photo" class="fade-in-animation1" class="image-loading"
+        alt="A street in Flushing, NY featuring Mei Hao Mall" 
+        src="assets/mei-hao-mall.jpg"/>
     </div>
 
     <div class="scroll-directive">
-      <div id="scroll-down-text">Scroll to Continue</div>
-      <div id="upside-down-carrot">&#8964</div>
+      <div id="scroll-down-text" class="fade-in-animation1">Scroll to Continue</div>
+      <div id="upside-down-carrot" class="fade-in-animation1">&#8964;</div>
     </div>
 
     <!----------------- ARTICLE TEXT BEGINS HERE ----------------->
 
-   <div class="all-body-contents"> 
-    <div class="body-grid section">
-      <img class="body-photo" id="intro-photo-1"
-        alt="A shot of Flushing Main Street on no particular day, in Queens, NY "
+    <div class="body-flex flex-fade-in" id="intro-text-container">
+      <div class="body-text-container">
+          <p>Emerging from the 7 train at Flushing Main Street, you’re immediately swept into the 
+            bustle. Hawkers call out in Mandarin as children walk home from school. Trendy boba cafes nestle between 
+            decades-old dumpling restaurants. Basement apartments housing ten people sit in the shadow of rising luxury 
+            condos.</p> 
+
+          <p class="text-appear highlight-on-scroll">Soon, something new will transform the landscape: a casino.</p>
+      
+          <p class>Flushing, a vibrant hub of culture and diversity within Queens, is home to one of the 
+            largest Chinatowns in the country. It’s also a hotspot for rapid change and gentrification: in the city’s 
+            last decade, <a href="https://www.nytimes.com/2020/01/10/realestate/new-york-decade-real-estate.html" target="_blank" rel="noopener noreferrer">only Williamsburg saw more luxury condos built</a>, with two-bedrooms frequently starting above $1 
+            million.
+
+          <p>Currently, <a href="https://storymaps.arcgis.com/stories/4b827a95ba3346c7956ae4f4b86e9b48" target="_blank" rel="noopener noreferrer">70% of residents are renters</a>. Many pay over half their income in rent. One in 5 live below the poverty 
+          line. They can only watch as the neighborhood changes before their eyes.</p>
+      </div>
+    
+     <img class="body-photo" 
+        alt="A shot of Flushing Main Street's new and old stores"
+        src="assets/gyukaku.jpg"/> 
+    </div>
+
+    <div class="dot-break">
+      <span>.</span><span>.</span><span>.</span>
+    </div>
+
+    <div class="body-flex flex-fade-in" id="cohen-text-container">
+      <img class="body-photo"
+        alt="Children playing in Flushing Meadows Corona Park in Queens, NY "
+        src="assets/fmcpark.jpg"/>
+      <div class="body-text-container"> 
+          <p>Enter Steve Cohen — a billionaire hedge fund manager and the owner of the Mets. 
+            He’s also known for being at the heart of a <a href="https://www.pbs.org/wgbh/frontline/article/steven-cohen-settles-insider-trading-case-with-sec/" target="_blank" rel="noopener noreferrer">2016 insider-trading scandal</a> (for which his company owed $1.8 
+            billion in penalties). </p> 
+
+      <p>Since September 2021, there have been <a href="https://www.sportico.com/business/finance/2021/citi-field-casino-sands-cohen-1234645247/" target="_blank" rel="noopener noreferrer">reports of Cohen eyeing Queens for a new casino</a> — 
+        specifically, 50 acres of public park land next to the Mets’ Citi Field in Flushing-Corona Meadows Park. 
+        The land has seen proposals for development before, but none have ever come to fruition. Cohen, however, was intent.</p>
+
+      <p>In 2023, he revealed plans for the $8-billionaire development "Metropolitan Park.” Partnering with Hard Rock, 
+        the development promises not only a casino, but also a music venue, a food hall, a hotel, and a 20-acre park.</p>
+      </div>
+    </div>
+
+    <div class="body-flex flex-fade-in">
+      <img class="body-photo" style="order: 1" 
+        alt="A map of the proposed casino development in FMCP"
+        src="assets/casino_map.png"/> 
+      <div class="body-text-container" id="cohen2-text-container">
+        <p>The plan was met with significant community backlash. Since its announcement, <a href="https://www.queensforall.com/" target="_blank" rel="noopener noreferrer">at least 18 
+        community groups have banded together</a> to publicly denounce the casino project for privatizing 78 acres of public land and 
+        exploiting local communities.</p>
+
+        <p>30 faith leaders in Queens representing <a href="https://drive.google.com/file/d/12Ctyhm8qPkIoIe0loYHIDCuf9A-ln2gX/view" target="_blank" rel="noopener noreferrer">10,000 local congregants released statements 
+          against Metropolitan Park casino</a> and the promotion of gambling.</p>
+
+        <p><a href="https://qns.com/2025/11/anti-casino-rally-flushing/" target="_blank" rel="noopener noreferrer">Over 1000 people have rallied</a> to protest the casino in Downtown Flushing.</p>
+      </div>
+    </div>
+
+    <div class="dot-break">
+      <span>.</span><span>.</span><span>.</span>
+    </div>
+
+    <div class="body-flex flex-fade-in">
+      <div class="body-text-container" id="pol-donor-container"> 
+        <p>In June 2021, Eric Adams had just won the democratic mayoral primary. Steve Cohen <a href="https://nypost.com/2022/11/19/mets-owner-steve-cohen-betting-big-on-nyc-casino/" target="_blank" rel="noopener noreferrer">had donated $1.5 million to
+          his campaign</a>. It was only fitting that two months into his term, the Adams’ administration began engaging with 
+          Cohen’s casino project.</p>
+
+        <p>Adams isn’t the only politician to receive Cohen’s generosity.</p> <p class="text-appear highlight-on-scroll">According to city records, Cohen’s development 
+          organizations New Green Willets and Queens Future <a href="https://www.cityclerk.nyc.gov/content/lobbying-bureau-reports" target="_blank" rel="noopener noreferrer">spent a staggering average of $1.2 million on lobbyists</a> each year since 2022.</p> 
+        <p>Other politicians he and Hard Rock have donated money to 
+          include Governor <a href="https://nypost.com/2022/07/26/mets-owner-steve-cohen-looking-to-open-nyc-casino/" target="_blank" rel="noopener noreferrer">Kathy Hochul</a>, Assemblymember <a href="https://www.cityandstateny.com/politics/2024/06/super-pacs-spending-years-legislative-democratic-primaries/397601/" target="_blank" rel="noopener noreferrer">Larinda Hooks</a>, Queens Borough President <a href="https://www.thecity.nyc/2022/04/05/adams-mets-steve-cohen-citi-field-casino-willets-point/" target="_blank" rel="noopener noreferrer">Donovan Richards</a>, and City 
+          Council Member <a href="https://www.thecity.nyc/2022/04/05/adams-mets-steve-cohen-citi-field-casino-willets-point/" target="_blank" rel="noopener noreferrer">Francisco Moya</a> — all of whom later came out to publicly support the casino.</p> 
+      </div>
+    </div>
+
+      <div class="dot-break">
+        <span>.</span><span>.</span><span>.</span>
+      </div>
+
+    <div class="body-flex flex-fade-in">
+      <img class="body-photo"
+        alt="A shot of Flushing Main Street on no particular day, in Queens, NY"
         src="assets/main-street.jpg"/> 
-      <div class="body-text-container" id="intro-text-container">
-          Along the 7 train to Queens, storefronts shift between Mandarin, Spanish, and Bengali. 
-          Children can be seen walking home from school, while their parents make their commutes to work.
-          Food trucks, mosques, herbal medicine centers, and boba shops line the streets. 
-          <p class="bold-text">And soon, the landscape might include something new: a casino.</p>
+      <div class="body-text-container" id="john-liu-container"> 
+      <p>One of the casino’s earliest opponents was Flushing’s own State Senator John Liu. In March 2024, Senator Liu 
+         penned <a href="https://www.nydailynews.com/2024/03/03/judging-casinos-communities-mitigate-gambling-impact-on-asian-americans/" target="_blank" rel="noopener noreferrer">a biting op-ed</a> in the New York Daily News arguing that casinos were predatory to Asian Americans.</p> 
+      <p>A meeting with Cohen quickly changed his tune: in exchange for the Metropolitan Park’s addition of <a href="https://queenseagle.com/all/2025/3/31/queens-senator-agrees-to-back-cohens-casino-at-citi-field" target="_blank" rel="noopener noreferrer">a Highline-like 
+         bridge linking Downtown Flushing to Willets Point</a> (or $100 million to the Flushing Waterfront Alliance if the 
+         bridge doesn’t pan out), the senator would draft the bill allowing Cohen access to the park land himself.</p>
       </div>
     </div>
 
-    <div class="body-grid section">
-      <img class="body-photo" id="process-map"
-        alt="A map of the proposed casino development in Flushing, Queens"
-        src="assets/casino_map.png"/>
-      <div class="body-text-container" id="process-text-container">
-          On Dec 15th, the New York Gaming Commission <a href="https://abc7ny.com/post/ny-gaming-board-vote-monday-awarding-new-casino-licenses-york-city/18230321/">approved a casino to be built</a> in Flushing Meadows Corona Park, 
-          which lays between the Corona and Flushing neighborhoods in Queens.
+      <div class="body-flex flex-fade-in">
+        <div class="body-text-container" id="john-liu-container1">  
+          <p>Senator Liu’s original concerns about the casino weren’t unfounded, however.</p>
+          <p class="text-appear highlight-on-scroll">Indeed, Cohen’s <a href="https://www.thecity.nyc/2023/01/20/mets-boss-steve-cohen-queens-casino-chinese-gamblers-bet/" target="_blank" rel="noopener noreferrer">interest in the casino’s proximity to Chinese communities 
+            was key</a> to the plan, a hedge fund analyst alluded to in an interview with THE CITY. “The 
+            success of the Macau business proves the Chinese population loves gambling,” he stated, noting that the Chinese 
+            city’s gaming revenue had exceeded that of Las Vegas just before 2020.</p> <p>“The parking lot’s proximity to the Chinese 
+            population in Flushing will make their trip to the casino much shorter than, say, traveling all the way to New 
+            Jersey.”</p>
+          </div>
       </div>
-    </div>
 
-    <div class="body-grid section">
-        <img class="body-photo" id="money-photo"
-          alt="A street in Flushing, Queens. An ambulance sits in front of the stores."
+      <div class="dot-break">
+        <span>.</span><span>.</span><span>.</span>
+      </div>
+
+      <div class="body-flex flex-fade-in">
+        <div class="body-text-container" id="opposition-container"> 
+          <p>State Senator Jessica Ramos, who represents the west Queens side of the parkland, stated in an interview 
+             with THE CITY that it had been hard to find people supportive of the casino plan <a href="https://www.thecity.nyc/2024/04/01/poll-casino-citi-field-jessica-ramos-steve-cohen/" target="_blank" rel="noopener noreferrer">who hadn’t “received or 
+             been promised a check”</a> by Cohen in exchange for support.</p>
+          <p>Upon polling the residents in her district, she found that 61% did not want to see a casino in Queens, 
+             and 75% did not want one in their neighborhood.</p>
+          <p class="text-appear highlight-on-scroll">A 2024 community exit poll, conducted in 2024 by the MinKwon Center and the AALDEF, showed that <a href="https://www.aaldef.org/news/documented-in-queens-asian-residents-double-down-against-proposed-casinos/" target="_blank" rel="noopener noreferrer">68.8% of Flushing Asian Americans voters opposed the casino</a>, citing “gambling addiction,” “public safety,” “and congestion” as their top concerns.</p>
+          <p>In a 2025 localized survey of Flushing voters, the Minkwon Center found that <a href="https://www.instagram.com/p/DRZ_owulvF1/" target="_blank" rel="noopener noreferrer">83.5% of Asian American residents in the area had been excluded</a> from the official public feedback process for the Metropolitan Park casino proposal.</p>
+        </div>
+      </div>
+
+      <div class="body-flex flex-fade-in">
+        <img class="body-photo"
+          alt="An ambulance sits in front of some stores in Flushing."
           src="assets/ambulance-storefront.jpg"/>
-        <div class="body-text-container" id="money-text-container">
-            The casino was introduced by Steve Cohen and Hard Rock… 
-            ...who spent an average of $1.5 million in <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/LobbyingAnnualReport2024.pdf">2023</a>, 
-            <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/2025%20Annual%20Report%20FINAL.pdf">2024</a>, 
-            and <a href="https://www.cityclerk.nyc.gov/assets/cityclerk/downloads/pdf/2026%20Annual%20Report%20final.pdf">2025</a> to lobby for the casino...
+        <div class="body-text-container" id="stats-container">
+          <p>Despite ardent community protest, Cohen’s Metropolitan Park vision will soon come to life. Last 
+            December, both the New York State Gaming Facility Location Board and the New York Gaming Commission 
+            voted unanimously to grant the casino licensure, along with two others in the Bronx and Queens. Both times, 
+            the crowd erupted in protests.</p>
+
+          <p>In an interview with Spectrum News, Vicki Been, chair of the Gaming Facility Location Board <a href="https://ny1.com/nyc/all-boroughs/inside-city-hall/2025/12/01/new-york-gaming-facility-location-board-chair-breaks-down-recommendation-process" target="_blank" rel="noopener noreferrer">was asked why 
+            casino proposals were approved for Queens and the Bronx</a> rather than Manhattan. She replied, “The community 
+            advisory committees were charged with trying to figure out what do the communities want, and they said pretty 
+            decisively that communities in Manhattan do not want a casino.” 
+          </p>
         </div>
-    </div>
+      </div>
 
-      <div class="body-grid section">
-        <img class="body-photo" id="person-photo"
-          alt="A man selling flowers in the Flushing area of Queens, NY."
-          src="assets/flowerman.jpg"/>
-        <div class="body-text-container" id="people-text-container">
-          This is how the community is responding…
-          Protestors...
-          13+ Organizations...
-        </div>
-    </div>
+      <div class="dot-break" id="last-dots">
+        <span>.</span><span>.</span><span>.</span>
+      </div>
 
-
-    <div class="body-grid section">
-        <img class="body-photo" id="data-graphic"
-          alt="A line waits for the bus on Flushing Main Street."
-          src="assets/placeholder-pic.jpg"/> <!--I've yet to create the data graphic so I included a placeholder pic-->
-        <div class="body-text-container" id="people-text-container">
-          Context — demographics of the area (race, rent-burdened, addiction)
-          <p class="bold-text">Steven Cohen's investor's quote abt specifically targeting Chinese communities...</p>
-          <p>While the casino proposes also includes x amount of affordable housing units, 
-            it’s <a href="https://www.urban.org/urban-wire/how-developing-casino-public-land-queens-new-york-city-could-displace-nearby-residents">not enough for all the rent-burdened people…</a></p>
-        </div>
-    </div>
-
-  </div>
-
-  <!-- JAVASCRIPT STARTS HERE -->
-
-  <script>
-
-  // scrolly animation 
-
-  const sections = document.querySelectorAll(".body-grid");
-  const cover = document.querySelector(".image-container");
-  const progressBar = document.getElementById("progress-bar");
-
-  function revealOnScroll() {
-    const trigger = window.innerHeight * 0.5;
-    let activeIndex = -1;
-
-    sections.forEach((section, i) => {
-      const top = section.getBoundingClientRect().top;
-      if (top < trigger && top > -window.innerHeight * 0.8) {
-        activeIndex = i;
-      }
-    });
-
-    sections.forEach((section, i) => {
-      section.classList.toggle("active", i === activeIndex);
-    });
-  }
-
-  // progress bar
-
-  function progressAndCover() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-
-    const progress = (scrollTop / docHeight) * 100;
-    progressBar.style.width = progress + "%";
-
-    const coverPassed =
-      scrollTop > cover.offsetHeight;
-
-    progressBar.style.opacity = coverPassed ? 1 : 0;
-
-    cover.classList.toggle("scrolled", scrollTop > cover.offsetHeight * 0.6);
-  }
-
-  window.addEventListener("scroll", () => {
-    revealOnScroll();
-    progressAndCover();
-  });
-
-  window.addEventListener("load", () => {
-    revealOnScroll();
-    progressAndCover();
-  });
-
-  // loading screen
-
-const bylineMain = document.querySelector(".byline-main");
-const bylineSub = document.querySelector(".byline-sub");
-const coverImage = document.getElementById("flushing-cover-photo");
-
-document.body.classList.add("loading");
-
-// initial loading text
-bylineMain.textContent = "Loading";
-bylineSub.textContent = "";
-
-// loading dots animation
-let dotCount = 0;
-const dotInterval = setInterval(() => {
-  dotCount = (dotCount + 1) % 4;
-  bylineMain.textContent = "Loading" + ".".repeat(dotCount);
-}, 400);
-
-// ---- loading gate logic ----
-let pageReady = false;
-let minTimePassed = false;
-
-function tryUnlock() {
-  if (pageReady && minTimePassed) {
-    clearInterval(dotInterval);
-
-    document.body.classList.remove("loading");
-
-    bylineMain.textContent = "By Louise Liu";
-    bylineSub.textContent = "Published May 2026";
-  }
-}
-
-// minimum 3 seconds
-setTimeout(() => {
-  minTimePassed = true;
-  tryUnlock();
-}, 3000);
-
-// image load check
-if (coverImage.complete) {
-  pageReady = true;
-  tryUnlock();
-} else {
-  coverImage.addEventListener("load", () => {
-    pageReady = true;
-    tryUnlock();
-  });
-}
-
-  </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
 
 
-<!-- comments from prof:
-
-- remove gray squares behind text
-- don't use grids, use flex boxes
-- think about interactivity. sometimes u scroll and the image stays while the text moves.
-- think abt spacing/alignment between text and visuals
-- 
- 
--->
